@@ -1,0 +1,96 @@
+[
+  {
+    "name": "Planner tasks remain usable in dark mode",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "planner task creation",
+      "dark-first default theme",
+      "task persistence",
+      "dashboard summary metrics are not duplicated"
+    ],
+    "description": "Verifies dashboard summary clarity and planner functionality in the default dark interface.",
+    "steps": [
+      "Open Campus Desk in a fresh browser profile",
+      "Check that each dashboard metric appears once",
+      "Open My Planner",
+      "Add a task named Practice equations and mark it complete"
+    ],
+    "expected": "The dark interface is active and the task can be created and completed."
+  },
+  {
+    "name": "Switch theme and retain preference",
+    "viewport": "mobile",
+    "covers": [
+      "manual theme override",
+      "theme preference persistence",
+      "responsive settings",
+      "theme color follows selected mode",
+      "scrollbars match selected theme",
+      "mobile bottom navigation layout"
+    ],
+    "description": "Verifies both themes stay visually consistent, including the scrollbar palette, and the mobile workspace navigation remains usable.",
+    "steps": [
+      "Open Settings on the mobile viewport",
+      "Select Light mode and inspect page surfaces, controls and scrollbars",
+      "Refresh and confirm light mode remains active",
+      "Switch to Dark mode and verify the page surfaces, controls and scrollbars update together"
+    ],
+    "expected": "The chosen theme persists, scrollbar tracks and thumbs match the selected forest/cream/lime palette, browser chrome color matches the theme, and all six mobile destinations remain available in a single bottom-navigation row."
+  },
+  {
+    "name": "Save own AI provider settings",
+    "viewport": "desktop",
+    "covers": [
+      "user-provided API configuration",
+      "settings validation",
+      "local key storage"
+    ],
+    "description": "Verifies an OpenAI-compatible endpoint and model can be configured without a hardcoded API key.",
+    "steps": [
+      "Open Settings",
+      "Enter an HTTPS API base URL, model name and a test key",
+      "Save settings and reopen Settings"
+    ],
+    "expected": "The configured endpoint and model remain available in the browser settings."
+  },
+  {
+    "name": "Assistant uses planner context and handles provider errors",
+    "viewport": "desktop",
+    "covers": [
+      "AI assistant prompt",
+      "planner context sharing disclosure",
+      "provider error feedback",
+      "chat clearing"
+    ],
+    "description": "Verifies the assistant uses current planner context and gives useful feedback when the configured provider fails.",
+    "steps": [
+      "Configure an API key in Settings",
+      "Create a planner task named Review algebra",
+      "Open AI Assistant and ask for help prioritizing tasks",
+      "If the provider request fails, inspect the assistant reply and use Clear assistant chat"
+    ],
+    "expected": "The assistant returns a provider answer or a visible troubleshooting response, and chat can be cleared."
+  },
+  {
+    "name": "Reject invalid marks and keep core tools",
+    "viewport": "mobile",
+    "covers": [
+      "marks calculator validation",
+      "focus timer controls",
+      "exam countdown",
+      "responsive quick-tools grid",
+      "mobile navigation fits in one row",
+      "no horizontal overflow"
+    ],
+    "description": "Verifies quick tools and navigation remain usable at a narrow viewport.",
+    "steps": [
+      "Open Quick Tools at the mobile viewport",
+      "Check the bottom navigation has one row with all six destinations",
+      "Check that the tools fit without horizontal page scrolling",
+      "Enter scored marks greater than total marks and submit",
+      "Start and pause the focus timer"
+    ],
+    "expected": "The panels fit the narrow viewport, invalid marks are rejected, and the focus timer starts and pauses."
+  }
+]
